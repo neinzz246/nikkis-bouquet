@@ -5,41 +5,42 @@ import authRoutes from "./authRoutes.js";
 
 const app = express();
 
-// ✅ Proper CORS setup (important!)
+// ✅ CORS setup — add both frontend URLs (localhost + vercel)
 app.use(cors({
   origin: [
-    "http://localhost:5173",             // for local dev
-    "https://nikkis-bouquet.vercel.app"  // for deployed frontend
+    "http://localhost:5173",
+    "https://nikkis-bouquet-eight.vercel.app"
   ],
-  methods: ["GET", "POST"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
 }));
 
+app.options("*", cors()); // ✅ handle preflight properly
+
 app.use(express.json());
 
-// ✅ Authentication routes
+// ✅ Auth routes
 app.use("/api/auth", authRoutes);
 
-// ✅ Set up email transporter
+// ✅ Nodemailer setup
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "nayanasurendranvb@gmail.com", // your Gmail
-    pass: "rtsrahhnhvqcthlc", // your App Password (keep safe!)
+    user: "nayanasurendranvb@gmail.com",
+    pass: "rtsrahhnhvqcthlc",
   },
 });
 
-// ✅ Handle POST request from frontend
+// ✅ Contact form route
 app.post("/api/send-message", async (req, res) => {
   const { name, email, message } = req.body;
 
   const mailOptions = {
     from: email,
-    to: "yourgmail@gmail.com", // replace with your actual receiving email
+    to: "yourgmail@gmail.com",
     subject: `New message from ${name}`,
     text: `
-You have a new message from your website:
-
 Name: ${name}
 Email: ${email}
 Message:
@@ -57,6 +58,5 @@ ${message}
   }
 });
 
-// ✅ Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
