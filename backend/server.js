@@ -3,19 +3,28 @@ import cors from "cors";
 import nodemailer from "nodemailer";
 import authRoutes from "./authRoutes.js";
 
-const app = express(); // ✅ must come first
+const app = express();
 
-app.use(cors());
+// ✅ Proper CORS setup (important!)
+app.use(cors({
+  origin: [
+    "http://localhost:5173",             // for local dev
+    "https://nikkis-bouquet.vercel.app"  // for deployed frontend
+  ],
+  methods: ["GET", "POST"],
+  credentials: true,
+}));
+
 app.use(express.json());
 
-// ✅ Route for authentication
+// ✅ Authentication routes
 app.use("/api/auth", authRoutes);
 
-// ✅ Set up your transporter
+// ✅ Set up email transporter
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "nayanasurendranvb@gmail.com", // replace with your Gmail
+    user: "nayanasurendranvb@gmail.com", // your Gmail
     pass: "rtsrahhnhvqcthlc", // your App Password (keep safe!)
   },
 });
@@ -48,4 +57,6 @@ ${message}
   }
 });
 
-app.listen(5000, () => console.log("🚀 Server running on http://localhost:5000"));
+// ✅ Start server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
