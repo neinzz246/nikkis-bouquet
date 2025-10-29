@@ -1,0 +1,32 @@
+/* index.css – clean, light base style */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #4a1d3d;
+  --accent-color: #d48bcc;
+  --bg-light: #fff6fc;
+  --text-color: #3e1f47;
+  --font-fancy: "Brush Script MT", cursive;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

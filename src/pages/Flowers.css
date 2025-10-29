@@ -1,0 +1,53 @@
+/* 🌸 Page Title */
+.page-title {
+  text-align: center;
+  font-family: cursive; /* 💐 prettier and more floral */
+  font-size: 3rem;
+  color: #6a1e4d;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(170, 74, 116, 0.25);
+}
+
+/* 🌷 Category Tabs */
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: rgba(255, 240, 248, 0.7);
+  border: 1px solid rgba(180, 90, 140, 0.3);
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #742a57;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 3px 8px rgba(170, 74, 116, 0.15);
+}
+
+/* Hover and Active */
+.tab-btn:hover {
+  background: rgba(255, 200, 230, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(170, 74, 116, 0.25);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, #f39ac7, #e68ab4);
+  color: white;
+  box-shadow: 0 6px 15px rgba(170, 74, 116, 0.3);
+  transform: scale(1.05);
+}
+
+/* 🌼 Product Layout */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}

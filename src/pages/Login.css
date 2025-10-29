@@ -1,0 +1,108 @@
+/* --- Background and layout --- */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #fff5f8, #ffe6eb, #ffe4f2);
+  font-family: "Poppins", sans-serif;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* --- Login box container --- */
+.login-container {
+  background: #ffffffd9;
+  border-radius: 25px;
+  padding: 50px 60px;
+  box-shadow: 0 8px 25px rgba(176, 75, 103, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.login-container:hover {
+  transform: translateY(-5px);
+}
+
+/* --- Headings and titles --- */
+.login-title {
+  font-size: 2rem;
+  color: #b04b67;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.login-subtext {
+  color: #9b4863;
+  margin-bottom: 30px;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+/* --- Form inputs --- */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 270px;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 2px solid #e8b5c2;
+  border-radius: 15px;
+  outline: none;
+  font-size: 1rem;
+  color: #4a4a4a;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #b04b67;
+  box-shadow: 0 0 10px rgba(176, 75, 103, 0.3);
+}
+
+/* --- Login button --- */
+.login-button {
+  margin-top: 15px;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #b04b67, #d16a8a);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  background: linear-gradient(135deg, #8c3953, #b04b67);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(176, 75, 103, 0.3);
+}
+
+/* --- Message text --- */
+.login-message {
+  margin-top: 20px;
+  color: #8c3953;
+  font-weight: 500;
+  background: #ffeef3;
+  padding: 8px 20px;
+  border-radius: 15px;
+  display: inline-block;
+  animation: fadeIn 0.6s ease-in;
+}
+
+/* --- Animation for soft fade --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

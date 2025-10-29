@@ -1,0 +1,62 @@
+.loading-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top left, #fff5f8, #ffe6eb, #ffe4f2);
+  font-family: "Poppins", sans-serif;
+  color: #8c3953;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* 🌸 Elegant pink circular loader */
+.flower-ring {
+  width: 70px;
+  height: 70px;
+  border: 6px solid #ffd6e1;
+  border-top: 6px solid #b04b67;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite, glow 1.2s ease-in-out infinite alternate;
+  box-shadow: 0 0 15px rgba(176, 75, 103, 0.3);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 8px rgba(176, 75, 103, 0.2);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(176, 75, 103, 0.5);
+  }
+}
+
+/* 🌷 Loading text animation */
+.loading-text {
+  margin-top: 25px;
+  font-size: 1.1rem;
+  font-style: italic;
+  letter-spacing: 1px;
+  color: #8c3953;
+  animation: fadeText 1.5s infinite alternate;
+}
+
+@keyframes fadeText {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

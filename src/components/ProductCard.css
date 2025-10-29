@@ -1,0 +1,124 @@
+.product-card {
+  background: rgba(255, 245, 250, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.4);
+  padding: 20px;
+  width: 260px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: "Poppins", cursive;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(255, 150, 170, 0.5);
+}
+
+.product-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 12px;
+}
+
+.product-info {
+  margin-bottom: 10px;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #aa336a;
+}
+
+.product-price {
+  font-weight: bold;
+  color: #ff4f8b;
+  font-size: 1rem;
+}
+
+.buy-btn {
+  background: linear-gradient(135deg, #ff8ab4, #ffc1d6);
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 12px;
+}
+
+.buy-btn:hover {
+  background: linear-gradient(135deg, #ff6fa0, #ff9ec6);
+  transform: scale(1.05);
+}
+
+/* ✨ QR Popup Modal */
+.qr-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 220, 230, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+}
+
+.qr-content {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(255, 140, 160, 0.5);
+  text-align: center;
+  width: 300px;
+  animation: popUp 0.3s ease;
+}
+
+.qr-content h4 {
+  color: #aa336a;
+  margin-bottom: 10px;
+}
+
+.qr-note {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #6d2c4b;
+}
+
+.qr-note a {
+  color: #ff6fa0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.close-btn {
+  background: #ffb6c1;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+  background: #ff9eb4;
+}
+
+@keyframes popUp {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Poppins:wght@300;400&display=swap');
+
+.navbar {
+  background: linear-gradient(270deg, #ffe5f0, #f7d4ef, #ffeef6, #fcdff3);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  font-family: "Parisienne", cursive;
+  border-radius: 20px;
+  margin: 25px auto 40px auto; /* adds a nice gap below */
+  width: 85%;
+  box-shadow: 0 8px 20px rgba(170, 74, 116, 0.2);
+  padding: 30px 0;
+  text-align: center;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.logo {
+  font-family: 'Parisienne', cursive;
+  font-size: 3rem;
+  color: #742a57;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 6px rgba(116, 42, 87, 0.2);
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+.heart {
+  color: #ff6ba1;
+  font-size: 1.6rem;
+  margin-left: 6px;
+  display: inline-block;
+  animation: heartbeat 1.8s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.tagline {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #a8578e;
+  margin-bottom: 15px;
+  letter-spacing: 0.6px;
+  opacity: 0;
+  animation: fadeIn 2s ease 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeIn 2s ease 1s forwards;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-family: "Parisienne", cursive;
+  font-size: medium;
+  color: #4a1d3d;
+  font-size: 1.05rem;
+  padding: 6px 14px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ff8dbf;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #7c215e;
+  background-color: rgba(255, 182, 206, 0.25);
+  box-shadow: 0 0 10px rgba(255, 182, 206, 0.6);
+  transform: scale(1.05);
+}
+.logout-btn {
+  background-color: #f4b6c2; /* soft rose pink */
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-family:  "Parisienne", cursive;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-left: 15px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.logout-btn:hover {
+  background-color: #f78da7; /* slightly brighter pink */
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(247, 141, 167, 0.4);
+}
+
+.logout-btn:active {
+  transform: scale(0.97);
+}
+

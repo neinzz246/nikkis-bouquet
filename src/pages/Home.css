@@ -1,0 +1,20 @@
+.home-page {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.page-title {
+  text-align: center;
+  font-family: "Parisienne", cursive;
+  color: #4a1d3d;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+}
